@@ -71,7 +71,8 @@
         <activity
             android:name="com.topdrivers.userv2.Activities.SplashScreen"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -239,6 +240,7 @@
         <meta-data
             android:name="com.facebook.accountkit.ClientToken"
             android:value="@string/ACCOUNT_KIT_CLIENT_TOKEN" />
+
         <meta-data
             android:name="com.topdrivers.userv2"
             android:value="com.topdrivers.userv2" />

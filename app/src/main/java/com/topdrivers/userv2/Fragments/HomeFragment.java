@@ -32,6 +32,7 @@ import android.provider.Settings;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.app.ActivityCompat;
+import androidx.core.view.GravityCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.core.content.ContextCompat;
@@ -2778,13 +2779,13 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback, Locati
                                                                         "first_name") + " " + provider.optString(
                                                                         "last_name"));
                                                                 if (provider.optString("avatar").startsWith("http"))
-                                                                    Picasso.with(context).load(provider.optString("avatar")).placeholder(R.drawable.ic_dummy_user).error(R.drawable.ic_dummy_user).into(imgProvider);
+                                                                    Picasso.get().load(provider.optString("avatar")).placeholder(R.drawable.ic_dummy_user).error(R.drawable.ic_dummy_user).into(imgProvider);
                                                                 else
-                                                                    Picasso.with(context).load(URLHelper.base +
+                                                                    Picasso.get().load(URLHelper.base +
                                                                             "storage/" + provider.optString("avatar")).placeholder(R.drawable.ic_dummy_user).error(R.drawable.ic_dummy_user).into(imgProvider);
                                                                 lblServiceRequested.setText(service_type.optString("name"));
                                                                 lblModelNumber.setText(provider_service.optString("service_model") + "\n" + provider_service.optString("service_number"));
-                                                                Picasso.with(context).load(service_type.optString("image"))
+                                                                Picasso.get().load(service_type.optString("image"))
                                                                         .placeholder(R.drawable.car_select).error(R.drawable.car_select)
                                                                         .into(imgServiceRequested);
                                                                 ratingProvider.setRating(Float.parseFloat(provider.optString("rating")));
@@ -2836,13 +2837,13 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback, Locati
                                                                         "first_name") + " " + provider.optString(
                                                                         "last_name"));
                                                                 if (provider.optString("avatar").startsWith("http"))
-                                                                    Picasso.with(context).load(provider.optString("avatar")).placeholder(R.drawable.ic_dummy_user).error(R.drawable.ic_dummy_user).into(imgProvider);
+                                                                    Picasso.get().load(provider.optString("avatar")).placeholder(R.drawable.ic_dummy_user).error(R.drawable.ic_dummy_user).into(imgProvider);
                                                                 else
-                                                                    Picasso.with(context).load(URLHelper.base +
+                                                                    Picasso.get().load(URLHelper.base +
                                                                             "storage/" + provider.optString("avatar")).placeholder(R.drawable.ic_dummy_user).error(R.drawable.ic_dummy_user).into(imgProvider);
                                                                 lblServiceRequested.setText(service_type.optString("name"));
                                                                 lblModelNumber.setText(provider_service.optString("service_model") + "\n" + provider_service.optString("service_number"));
-                                                                Picasso.with(context).load(service_type.optString("image")).placeholder(R.drawable.car_select)
+                                                                Picasso.get().load(service_type.optString("image")).placeholder(R.drawable.car_select)
                                                                         .error(R.drawable.car_select).into(imgServiceRequested);
                                                                 ratingProvider.setRating(Float.parseFloat(provider.optString("rating")));
                                                                 //lnrAfterAcceptedStatus
@@ -2902,13 +2903,13 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback, Locati
                                                                         "first_name") + " " + provider.optString(
                                                                         "last_name"));
                                                                 if (provider.optString("avatar").startsWith("http"))
-                                                                    Picasso.with(context).load(provider.optString("avatar")).placeholder(R.drawable.ic_dummy_user).error(R.drawable.ic_dummy_user).into(imgProvider);
+                                                                    Picasso.get().load(provider.optString("avatar")).placeholder(R.drawable.ic_dummy_user).error(R.drawable.ic_dummy_user).into(imgProvider);
                                                                 else
-                                                                    Picasso.with(context).load(URLHelper.base +
+                                                                    Picasso.get().load(URLHelper.base +
                                                                             "storage/" + provider.optString("avatar")).placeholder(R.drawable.ic_dummy_user).error(R.drawable.ic_dummy_user).into(imgProvider);
                                                                 lblServiceRequested.setText(service_type.optString("name"));
                                                                 lblModelNumber.setText(provider_service.optString("service_model") + "\n" + provider_service.optString("service_number"));
-                                                                Picasso.with(context).load(service_type.optString("image")).placeholder(R.drawable.car_select).error(R.drawable.car_select).into(imgServiceRequested);
+                                                                Picasso.get().load(service_type.optString("image")).placeholder(R.drawable.car_select).error(R.drawable.car_select).into(imgServiceRequested);
                                                                 ratingProvider.setRating(Float.parseFloat(provider.optString("rating")));
                                                                 lnrAfterAcceptedStatus.setVisibility(View.VISIBLE);
                                                                 tripLine.setVisibility(View.VISIBLE);
@@ -2947,13 +2948,13 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback, Locati
                                                                         "first_name") + " " + provider.optString(
                                                                         "last_name"));
                                                                 if (provider.optString("avatar").startsWith("http"))
-                                                                    Picasso.with(context).load(provider.optString("avatar")).placeholder(R.drawable.ic_dummy_user).error(R.drawable.ic_dummy_user).into(imgProvider);
+                                                                    Picasso.get().load(provider.optString("avatar")).placeholder(R.drawable.ic_dummy_user).error(R.drawable.ic_dummy_user).into(imgProvider);
                                                                 else
-                                                                    Picasso.with(context).load(URLHelper.base +
+                                                                    Picasso.get().load(URLHelper.base +
                                                                             "storage/" + provider.optString("avatar")).placeholder(R.drawable.ic_dummy_user).error(R.drawable.ic_dummy_user).into(imgProvider);
                                                                 lblServiceRequested.setText(service_type.optString("name"));
                                                                 lblModelNumber.setText(provider_service.optString("service_model") + "\n" + provider_service.optString("service_number"));
-                                                                Picasso.with(context).load(service_type.optString("image")).placeholder(R.drawable.car_select).error(R.drawable.car_select).into(imgServiceRequested);
+                                                                Picasso.get().load(service_type.optString("image")).placeholder(R.drawable.car_select).error(R.drawable.car_select).into(imgServiceRequested);
                                                                 ratingProvider.setRating(Float.parseFloat(provider.optString("rating")));
                                                                 lnrAfterAcceptedStatus.setVisibility(View.VISIBLE);
                                                                 tripLine.setVisibility(View.VISIBLE);
@@ -2991,13 +2992,13 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback, Locati
                                                                         "first_name") + " " + provider.optString(
                                                                         "last_name"));
                                                                 if (provider.optString("avatar").startsWith("http"))
-                                                                    Picasso.with(context).load(provider.optString("avatar")).placeholder(R.drawable.ic_dummy_user).error(R.drawable.ic_dummy_user).into(imgProvider);
+                                                                    Picasso.get().load(provider.optString("avatar")).placeholder(R.drawable.ic_dummy_user).error(R.drawable.ic_dummy_user).into(imgProvider);
                                                                 else
-                                                                    Picasso.with(context).load(URLHelper.base +
+                                                                    Picasso.get().load(URLHelper.base +
                                                                             "storage/" + provider.optString("avatar")).placeholder(R.drawable.ic_dummy_user).error(R.drawable.ic_dummy_user).into(imgProvider);
                                                                 lblServiceRequested.setText(service_type.optString("name"));
                                                                 lblModelNumber.setText(provider_service.optString("service_model") + "\n" + provider_service.optString("service_number"));
-                                                                Picasso.with(context).load(service_type.optString("image")).placeholder(R.drawable.car_select).error(R.drawable.car_select).into(imgServiceRequested);
+                                                                Picasso.get().load(service_type.optString("image")).placeholder(R.drawable.car_select).error(R.drawable.car_select).into(imgServiceRequested);
                                                                 ratingProvider.setRating(Float.parseFloat(provider.optString("rating")));
                                                                 lnrAfterAcceptedStatus.setVisibility(View.VISIBLE);
                                                                 tripLine.setVisibility(View.VISIBLE);
@@ -3066,9 +3067,9 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback, Locati
                                                                     if (provider.optString(
                                                                             "avatar").startsWith(
                                                                             "http")) {
-                                                                        Picasso.with(context).load(provider.optString("avatar")).placeholder(R.drawable.loading).error(R.drawable.ic_dummy_user).into(imgProvider);
+                                                                        Picasso.get().load(provider.optString("avatar")).placeholder(R.drawable.loading).error(R.drawable.ic_dummy_user).into(imgProvider);
                                                                     } else {
-                                                                        Picasso.with(context).load(URLHelper.base + "storage/" + provider.optString("avatar")).placeholder(R.drawable.loading).error(R.drawable.ic_dummy_user).into(imgProvider);
+                                                                        Picasso.get().load(URLHelper.base + "storage/" + provider.optString("avatar")).placeholder(R.drawable.loading).error(R.drawable.ic_dummy_user).into(imgProvider);
                                                                     }
 
                                                                     if (requestStatusCheckObject.optString(
@@ -3359,9 +3360,9 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback, Locati
                                                                     if (provider.optString(
                                                                             "avatar").startsWith(
                                                                             "http")) {
-                                                                        Picasso.with(context).load(provider.optString("avatar")).placeholder(R.drawable.loading).error(R.drawable.ic_dummy_user).into(imgProviderRate);
+                                                                        Picasso.get().load(provider.optString("avatar")).placeholder(R.drawable.loading).error(R.drawable.ic_dummy_user).into(imgProviderRate);
                                                                     } else {
-                                                                        Picasso.with(context).load(URLHelper.base + "storage/" + provider.optString("avatar")).placeholder(R.drawable.loading).error(R.drawable.ic_dummy_user).into(imgProviderRate);
+                                                                        Picasso.get().load(URLHelper.base + "storage/" + provider.optString("avatar")).placeholder(R.drawable.loading).error(R.drawable.ic_dummy_user).into(imgProviderRate);
                                                                     }
 
                                                                     if (requestStatusCheckObject.optString(
@@ -3830,13 +3831,13 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback, Locati
                     "first_name") + " " + provider.optString(
                     "last_name"));
             if (provider.optString("avatar").startsWith("http"))
-                Picasso.with(context).load(provider.optString("avatar")).placeholder(R.drawable.ic_dummy_user).error(R.drawable.ic_dummy_user).into(imgProvider);
+                Picasso.get().load(provider.optString("avatar")).placeholder(R.drawable.ic_dummy_user).error(R.drawable.ic_dummy_user).into(imgProvider);
             else
-                Picasso.with(context).load(URLHelper.base +
+                Picasso.get().load(URLHelper.base +
                         "storage/" + provider.optString("avatar")).placeholder(R.drawable.ic_dummy_user).error(R.drawable.ic_dummy_user).into(imgProvider);
             lblServiceRequested.setText(service_type.optString("name"));
             lblModelNumber.setText(provider_service.optString("service_model") + "\n" + provider_service.optString("service_number"));
-            Picasso.with(context).load(service_type.optString("image")).placeholder(R.drawable.car_select)
+            Picasso.get().load(service_type.optString("image")).placeholder(R.drawable.car_select)
                     .error(R.drawable.car_select).into(imgServiceRequested);
             ratingProvider.setRating(Float.parseFloat(provider.optString("rating")));
             //lnrAfterAcceptedStatus
@@ -5133,7 +5134,7 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback, Locati
                     try {
                         if (NAV_DRAWER == 0) {
                             if (drawer != null)
-                                drawer.openDrawer(Gravity.START);
+                                drawer.openDrawer(GravityCompat.START);
                         } else {
                             NAV_DRAWER = 0;
                             if (drawer != null)
@@ -5331,7 +5332,7 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback, Locati
         }
 
         @Override
-        public void onBindViewHolder(ServiceListAdapter.MyViewHolder holder, final int position) {
+        public void onBindViewHolder(ServiceListAdapter.MyViewHolder holder, @SuppressLint("RecyclerView") final int position) {
             utils.print("Title: ", "" + jsonArray.optJSONObject(position).optString("name") + " " +
                     "Image: " + jsonArray.optJSONObject(position).optString("image") + " " +
                     "Grey_Image:" + jsonArray.optJSONObject(position).optString("grey_image"));

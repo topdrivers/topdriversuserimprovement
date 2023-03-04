@@ -63,7 +63,8 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.auth.api.signin.GoogleSignInResult;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.firebase.iid.FirebaseInstanceId;
+
+import com.google.firebase.messaging.FirebaseMessaging;
 import com.google.gson.JsonObject;
 import com.koushikdutta.async.future.FutureCallback;
 import com.koushikdutta.ion.Ion;
@@ -471,8 +472,8 @@ public class ActivitySocialLogin extends AppCompatActivity implements GoogleApiC
                 device_token = SharedHelper.getKey(context, "device_token");
                 utils.print(TAG, "GCM Registration Token: " + device_token);
             } else {
-                device_token = ""+ FirebaseInstanceId.getInstance().getToken();
-                SharedHelper.putKey(context, "device_token",""+FirebaseInstanceId.getInstance().getToken());
+                device_token = ""+ FirebaseMessaging.getInstance().getToken();
+                SharedHelper.putKey(context, "device_token",""+FirebaseMessaging.getInstance().getToken());
                 utils.print(TAG, "Failed to complete token refresh: " + device_token);
             }
         } catch (Exception e) {

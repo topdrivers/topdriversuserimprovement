@@ -817,6 +817,7 @@ public class CustomGooglePlacesSearch extends AppCompatActivity implements Googl
     @Override
     public void onRequestPermissionsResult(int requestCode,
                                            String permissions[], int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         switch (requestCode) {
             case MY_PERMISSIONS_REQUEST_LOC: {
                 // If request is cancelled, the result arrays are empty.

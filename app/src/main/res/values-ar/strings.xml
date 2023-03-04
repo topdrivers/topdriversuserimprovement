@@ -272,4 +272,12 @@
     <string name="tv_resend_code">Resend code</string>
     <string name="tv_verify_code_number">The verify code is send to %s</string>
 
+    <!--Activity Phone -->
+    <string name="whats_your_numbner_phone">What\'s your phone number?</string>
+    <string name="enter_your_code">Enter your code verify</string>
+
+    <string name="eta">ETA: </string>
+    <string name="time_unit">mins</string>
+    <string name="default_notification_channel_id">123456</string>
+
 </resources>

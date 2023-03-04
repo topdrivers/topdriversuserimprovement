@@ -191,12 +191,12 @@ public class MainActivity extends AppCompatActivity implements HomeFragment.Home
         //Glide.with(activity).load(SharedHelper.getKey(context, "picture")).placeholder(R.drawable.loading).error(R.drawable.ic_dummy_user).into(imgProfile);
         if (!SharedHelper.getKey(context, "picture").equalsIgnoreCase("")
                 && !SharedHelper.getKey(context, "picture").equalsIgnoreCase(null) && SharedHelper.getKey(context, "picture") != null) {
-            Picasso.with(context).load(SharedHelper.getKey(context, "picture"))
+            Picasso.get().load(SharedHelper.getKey(context, "picture"))
                     .placeholder(R.drawable.ic_dummy_user)
                     .error(R.drawable.ic_dummy_user)
                     .into(imgProfile);
         } else {
-            Picasso.with(context).load(R.drawable.ic_dummy_user)
+            Picasso.get().load(R.drawable.ic_dummy_user)
                     .placeholder(R.drawable.ic_dummy_user)
                     .error(R.drawable.ic_dummy_user)
                     .into(imgProfile);

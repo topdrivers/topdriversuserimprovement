@@ -31,8 +31,6 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.iid.FirebaseInstanceId;
-import com.google.firebase.iid.InstanceIdResult;
 import com.google.firebase.messaging.FirebaseMessaging;
 import com.topdrivers.userv2.BuildConfig;
 import com.topdrivers.userv2.Helper.ConnectionHelper;
@@ -386,17 +384,17 @@ public class SplashScreen extends AppCompatActivity {
 
     public void GetToken() {
         try {
-            FirebaseInstanceId.getInstance().getInstanceId()
-                    .addOnCompleteListener(new OnCompleteListener<InstanceIdResult>() {
+            FirebaseMessaging.getInstance().getToken()
+                    .addOnCompleteListener(new OnCompleteListener<String>() {
                         @Override
-                        public void onComplete(@NonNull Task<InstanceIdResult> task) {
+                        public void onComplete(@NonNull Task<String> task) {
                             if (!task.isSuccessful()) {
                                 Log.w(TAG, "getInstanceId failed", task.getException());
                                 return;
                             }
 
                             // Get new Instance ID token
-                            device_token = task.getResult().getToken();
+                            device_token = task.getResult();
                             Utilities utils = new Utilities();
                             utils.print(TAG, "device_token " + device_token);
                             SharedHelper.putKey(context, "device_token", device_token);
@@ -409,17 +407,17 @@ public class SplashScreen extends AppCompatActivity {
             } else {
 
 
-                FirebaseInstanceId.getInstance().getInstanceId()
-                        .addOnCompleteListener(new OnCompleteListener<InstanceIdResult>() {
+                FirebaseMessaging.getInstance().getToken()
+                        .addOnCompleteListener(new OnCompleteListener<String>() {
                             @Override
-                            public void onComplete(@NonNull Task<InstanceIdResult> task) {
+                            public void onComplete(@NonNull Task<String> task) {
                                 if (!task.isSuccessful()) {
                                     Log.w(TAG, "getInstanceId failed", task.getException());
                                     return;
                                 }
 
                                 // Get new Instance ID token
-                                device_token = task.getResult().getToken();
+                                device_token = task.getResult();
                                 Utilities utils = new Utilities();
                                 utils.print(TAG, "device_token " + device_token);
                                 SharedHelper.putKey(context, "device_token", device_token);
@@ -430,8 +428,8 @@ public class SplashScreen extends AppCompatActivity {
 
 
                 /*if(device_token!=null && device_token.length()>0) {
-                    device_token = "" + FirebaseInstanceId.getInstance().getToken();
-                    SharedHelper.putKey(context, "device_token", "" + FirebaseInstanceId.getInstance().getToken());
+                    device_token = "" + FirebaseMessaging.getInstance().getToken();
+                    SharedHelper.putKey(context, "device_token", "" + FirebaseMessaging.getInstance().getToken());
                     Log.i(TAG, "Failed to complete token refresh: " + device_token);
                 }*/
             }

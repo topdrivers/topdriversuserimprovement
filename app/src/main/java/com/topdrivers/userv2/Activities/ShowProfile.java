@@ -91,9 +91,9 @@ public class ShowProfile extends AppCompatActivity {
             else
                 ratingProvider.setRating(1);
             if (provider.getImg().equalsIgnoreCase("http"))
-                Picasso.with(context).load(provider.getImg()).memoryPolicy(MemoryPolicy.NO_CACHE).placeholder(R.drawable.ic_dummy_user).error(R.drawable.ic_dummy_user).into(profile_Image);
+                Picasso.get().load(provider.getImg()).memoryPolicy(MemoryPolicy.NO_CACHE).placeholder(R.drawable.ic_dummy_user).error(R.drawable.ic_dummy_user).into(profile_Image);
             else
-                Picasso.with(context).load(URLHelper.base +"storage/"+provider.getImg()).memoryPolicy(MemoryPolicy.NO_CACHE).placeholder(R.drawable.ic_dummy_user).error(R.drawable.ic_dummy_user).into(profile_Image);
+                Picasso.get().load(URLHelper.base +"storage/"+provider.getImg()).memoryPolicy(MemoryPolicy.NO_CACHE).placeholder(R.drawable.ic_dummy_user).error(R.drawable.ic_dummy_user).into(profile_Image);
         }
     }
 

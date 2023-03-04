@@ -102,14 +102,15 @@ public class TopdriversApplication extends Application {
         remoteConfigDefaults.put(ForceUpdateChecker.KEY_UPDATE_URL,
                 "https://play.google.com/store/apps/details?id=com.topdrivers.app");
 
-        firebaseRemoteConfig.setDefaults(remoteConfigDefaults);
+        //firebaseRemoteConfig.setDefaults(remoteConfigDefaults);
+        firebaseRemoteConfig.setDefaultsAsync(remoteConfigDefaults);
         firebaseRemoteConfig.fetch(10) // fetch every minutes
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()) {
                             Log.d(TAG, "remote config is fetched.");
-                            firebaseRemoteConfig.activateFetched();
+                            firebaseRemoteConfig.fetch();
                         }
                     }
                 });
